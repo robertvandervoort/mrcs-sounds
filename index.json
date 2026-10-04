@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "generated": "2026-10-04T13:11:54-05:00",
+  "baseUrl": "",
+  "sounds": [
+    {
+      "id": "steam-train-horn-hiss",
+      "name": "Steam train horn and hiss",
+      "category": "railway",
+      "format": "mp3",
+      "durationSec": 7.78,
+      "sizeBytes": 125421,
+      "sampleRate": 44100,
+      "channels": 1,
+      "license": "CC0-1.0",
+      "attribution": "\"Hiss of steam train 2\" (ID 0228) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+      "path": "sounds/railway/steam-train-horn-hiss.mp3",
+      "sha256": "14995405fa839060b9c2525e31698bc307f1bee19c121f7357fa7f927b9fc215",
+      "source": "https://bigsoundbank.com/"
+    }
+  ]
+}

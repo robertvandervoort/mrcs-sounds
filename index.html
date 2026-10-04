@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MRCS sound library</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>MRCS sound library</h1>
+    <p>
+      Sound clips for <strong>MRCS</strong> model railway control units. MRCS units download
+      clips from this library using its manifest,
+      <a href="index.json"><code>index.json</code></a>. Every clip may be redistributed; its
+      licence and attribution are listed with it.
+    </p>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <label for="search" class="visually-hidden">Search sounds</label>
+      <input id="search" type="search" placeholder="Search by name, category or licence" autocomplete="off">
+      <span id="count" aria-live="polite"></span>
+    </div>
+    <div id="library"><p class="muted">Loading&hellip;</p></div>
+  </main>
+
+  <footer>
+    <p>
+      Tooling is MIT licensed; each sound carries its own licence.
+      Source: <a href="https://github.com/robertvandervoort/mrcs-sounds">github.com/robertvandervoort/mrcs-sounds</a>.
+    </p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
