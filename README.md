@@ -34,6 +34,7 @@ sounds/<category>/<file>   Clips (.mp3 or .wav), one folder per category
 sounds/licenses.json       Name, licence, attribution and source for every clip
 index.json                 Generated manifest (do not edit by hand)
 tools/build_index.py       Regenerates and checks index.json
+tools/encode.py            Encodes a clip to the library standard and tags it
 index.html, assets/        Browse page (no frameworks, no external requests)
 .nojekyll                  Serve the tree as-is
 ```
@@ -80,7 +81,8 @@ index.html, assets/        Browse page (no frameworks, no external requests)
    (`ambient`, `industry`, `nature`, `railway`, `station`, `effects`, ...). Filenames must be
    under 96 characters of `A-Z a-z 0-9 _ - .`, because MRCS stores clips as
    `/sounds/<filename>`.
-3. Prefer what MRCS plays best: 128 kbps mono MP3, or 16-bit PCM WAV (mono or stereo).
+3. Encode it to the library standard: **mono MP3, 128 kbps CBR, 44.1 kHz** (see
+   [Encoding](#encoding)). 16-bit PCM WAV is accepted but large; MP3 is preferred.
 4. Add an entry to `sounds/licenses.json`, keyed by the path under `sounds/`:
 
    ```json
@@ -97,6 +99,35 @@ index.html, assets/        Browse page (no frameworks, no external requests)
    ```sh
    python tools/build_index.py
    ```
+
+## Encoding
+
+Every clip is mono MP3, 128 kbps CBR, 44.1 kHz. Encode from the best original you
+have (WAV, FLAC or a high-bitrate MP3), not from an already-reduced copy. Stereo is
+averaged to mono; ffmpeg's plain `-ac 1` sums stereo at about 0.707 per channel,
+which can be up to 3 dB louder and clip, so use the `pan` filter:
+
+```sh
+ffmpeg -i original.wav -map 0:a:0 -map_metadata -1 \
+  -af "pan=mono|c0=0.5*c0+0.5*c1" -ar 44100 -codec:a libmp3lame -b:a 128k \
+  -id3v2_version 3 -metadata title="Readable name" -metadata artist="Author" \
+  -metadata comment="CC0-1.0, BigSoundBank 0898, https://bigsoundbank.com/..." \
+  sounds/<category>/<file>.mp3
+```
+
+For a mono original, replace the `-af ...` option with `-ac 1`.
+
+`tools/encode.py` does the same and takes the tags from `sounds/licenses.json` (add
+the entry first):
+
+```sh
+python tools/encode.py original.wav railway/my-clip.mp3
+```
+
+It prints the duration and RMS level before and after, and exits 2 if the duration
+moved by more than 50 ms, the output clips, or the mono mix is more than 6 dB quieter
+than the source (an inverted channel cancelling out). It needs ffmpeg on `PATH` or the
+`imageio-ffmpeg` package.
 
 `tools/build_index.py` uses only the Python standard library (3.9+). With
 `--check` it changes nothing and exits 1 if `index.json` is stale, if a clip has no
