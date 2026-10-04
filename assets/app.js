@@ -4,7 +4,9 @@
   var library = document.getElementById("library");
   var search = document.getElementById("search");
   var count = document.getElementById("count");
+  var chips = document.getElementById("chips");
   var sounds = [];
+  var activeCategory = "";
 
   function el(tag, cls, text) {
     var node = document.createElement(tag);
@@ -60,7 +62,9 @@
 
   function render() {
     var query = search.value.trim().toLowerCase();
-    var shown = sounds.filter(function (s) { return matches(s, query); });
+    var shown = sounds.filter(function (s) {
+      return (!activeCategory || s.category === activeCategory) && matches(s, query);
+    });
     library.textContent = "";
     count.textContent = shown.length + " of " + sounds.length + " sounds";
 
@@ -79,6 +83,23 @@
     });
   }
 
+  function renderChips() {
+    var totals = {};
+    sounds.forEach(function (s) { totals[s.category] = (totals[s.category] || 0) + 1; });
+    chips.textContent = "";
+    [""].concat(Object.keys(totals).sort()).forEach(function (category) {
+      var chip = el("button", "chip", category ? category + " (" + totals[category] + ")" : "All");
+      chip.type = "button";
+      chip.setAttribute("aria-pressed", String(category === activeCategory));
+      chip.addEventListener("click", function () {
+        activeCategory = category;
+        renderChips();
+        render();
+      });
+      chips.appendChild(chip);
+    });
+  }
+
   fetch("index.json", { cache: "no-cache" })
     .then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
@@ -87,6 +108,7 @@
     .then(function (doc) {
       sounds = doc.sounds || [];
       search.addEventListener("input", render);
+      renderChips();
       render();
     })
     .catch(function (err) {

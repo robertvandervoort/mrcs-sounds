@@ -77,7 +77,7 @@ index.html, assets/        Browse page (no frameworks, no external requests)
 
 1. Check the licence is one of those above and note the author and source.
 2. Put the file in `sounds/<category>/`. Category folders are lowercase
-   (`ambient`, `nature`, `railway`, `station`, `effects`, ...). Filenames must be
+   (`ambient`, `industry`, `nature`, `railway`, `station`, `effects`, ...). Filenames must be
    under 96 characters of `A-Z a-z 0-9 _ - .`, because MRCS stores clips as
    `/sounds/<filename>`.
 3. Prefer what MRCS plays best: 128 kbps mono MP3, or 16-bit PCM WAV (mono or stereo).

@@ -1,8 +1,80 @@
 {
+  "ambient/countryside-day.mp3": {
+    "name": "Countryside, daytime",
+    "license": "CC0-1.0",
+    "attribution": "\"Countryside #2\" (ID 0898) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/campaign-2-s0898.html"
+  },
+  "ambient/countryside-morning.mp3": {
+    "name": "Countryside, morning",
+    "license": "CC0-1.0",
+    "attribution": "\"Campaign Morning\" (ID 0912) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/campaign-morning-s0912.html"
+  },
+  "ambient/countryside-night.mp3": {
+    "name": "Countryside at night",
+    "license": "CC0-1.0",
+    "attribution": "\"Campaign at Night #4\" (ID 1880) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/campaign-at-night-4-s1880.html"
+  },
+  "industry/industrial-office-noise.mp3": {
+    "name": "Noisy industrial office",
+    "license": "CC0-1.0",
+    "attribution": "\"Noisy office industry\" (ID 0502) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/noisy-office-industry-s0502.html"
+  },
+  "industry/sawmill.mp3": {
+    "name": "Sawmill",
+    "license": "CC0-1.0",
+    "attribution": "\"Sawmill #2\" (ID 1537) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/sawmill-2-s1537.html"
+  },
+  "nature/night-insects.mp3": {
+    "name": "Night insects",
+    "license": "CC0-1.0",
+    "attribution": "\"Nocturnal Insects #4\" (ID 1470) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/nocturnal-insects-4-s1470.html"
+  },
+  "nature/small-stream.mp3": {
+    "name": "Small stream",
+    "license": "CC0-1.0",
+    "attribution": "\"Small Stream\" (ID 0823) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/small-stream-s0823.html"
+  },
+  "nature/small-waterfall.mp3": {
+    "name": "Small waterfall",
+    "license": "CC0-1.0",
+    "attribution": "\"Small Cascade\" (ID 0507) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/small-cascade-s0507.html"
+  },
+  "railway/level-crossing-bell.mp3": {
+    "name": "Level crossing warning bell",
+    "license": "CC0-1.0",
+    "attribution": "\"Level Crossing Warning\" (ID 1064) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/level-crossing-warning-s1064.html"
+  },
+  "railway/steam-hiss-short.mp3": {
+    "name": "Steam train hiss, short",
+    "license": "CC0-1.0",
+    "attribution": "\"Hiss of steam train #3\" (ID 3011) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/hiss-of-steam-train-3-s3011.html"
+  },
+  "railway/steam-locomotive-stop.mp3": {
+    "name": "Steam locomotive stopping",
+    "license": "CC0-1.0",
+    "attribution": "\"Steam locomotive, stop\" (ID 3015) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/steam-locomotive-stop-s3015.html"
+  },
   "railway/steam-train-horn-hiss.mp3": {
     "name": "Steam train horn and hiss",
     "license": "CC0-1.0",
-    "attribution": "\"Hiss of steam train 2\" (ID 0228) by Joseph Sardin, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
-    "source": "https://bigsoundbank.com/"
+    "attribution": "\"Hiss of Steam Train #2\" (ID 0228) by GlaneurDeSons, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/hiss-of-steam-train-2-s0228.html"
+  },
+  "railway/steam-train-whistle.mp3": {
+    "name": "Steam train whistle",
+    "license": "CC0-1.0",
+    "attribution": "\"Whistling train #2\" (ID 0226) by GlaneurDeSons, BigSoundBank.com. Released as CC0 / WTFPL / public domain.",
+    "source": "https://bigsoundbank.com/whistling-train-2-s0226.html"
   }
 }
